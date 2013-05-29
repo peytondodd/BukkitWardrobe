@@ -1,4 +1,15 @@
 <?php 
+
+function safeQ($worse) {
+  // Stripslashes
+  $okay = htmlspecialchars(stripslashes($worse));
+  $better = str_ireplace("script", "blocked", $okay);
+  $good = mysql_escape_string($better);
+  
+  return $good;
+}
+
+
 require_once("functions.inc.php"); 
 
 $username = $_GET['ign'];
