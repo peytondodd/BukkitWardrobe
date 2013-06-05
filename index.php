@@ -1,15 +1,5 @@
 <?php 
 
-function safeQ($worse) {
-  // Stripslashes
-  $okay = htmlspecialchars(stripslashes($worse));
-  $better = str_ireplace("script", "blocked", $okay);
-  $good = mysql_escape_string($better);
-  
-  return $good;
-}
-
-
 require_once("functions.inc.php"); 
 
 $username = $_GET['ign'];
@@ -110,8 +100,8 @@ if ($mode=="download"){
   	        	<br/><br/>
 				<div class="well" style="max-width: 400px; margin: 0 auto 10px;">
 				<center>	
-			       	<p><a href="http://www.minecraft.net/skin/remote.jsp?url=./dl/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a></p>
-				    <p><a href="./dl.php?ign=<?php echo $_POST['ign'] ?>&clothing=<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Download</a></p>
+			       	<p><a href="http://www.minecraft.net/skin/remote.jsp?url=http://yeahwh.at/download/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a></p>
+				    <p><a href="./download/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Download</a></p>
 			    </center>
 			    </div>
   	        	<p><a href="/" class="btn btn-mini">Back</a></p>
