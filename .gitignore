@@ -27,4 +27,16 @@ Temporary Items
 
 ### BukkitWardrobe ###
 
+# Configuration file
+config.php
+
+# build specific
+.sass-cache
+bower_components
+node_modules
+coverage
+.coveralls.yml
+npm-debug.log
+
+# temporary skin file
 tmp.png

@@ -1,0 +1,22 @@
+{
+  "name": "BukkitWardrobe",
+  "version": "1.0.0",
+  "description": "PHP script to provide your Minecraft players a web based wardrobe / clothes generator",
+  "authors": [
+    "Jonas Friedmann"
+  ],
+  "license": "WTFPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.3",
+    "modernizr": "~2.8.3",
+    "bootstrap-sass-official": "~3.3.3"
+  }
+}
