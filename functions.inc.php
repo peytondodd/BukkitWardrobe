@@ -25,7 +25,7 @@ function cache_skin($image_url){
 		$local_image_file  = fopen($image_path."tmp.png", 'w+');
 		chmod($image_path."tmp.png",0755);
 		fwrite($local_image_file, $image_to_fetch);
-		fclose($local_image_file);	
+		fclose($local_image_file);
 	}
 }
 
@@ -52,7 +52,7 @@ function skin($username, $clothing, $download){
 	if($download){
     	header('Content-Disposition: attachment; filename="'.$username.'"');
 	}
-	
+
 	imagepng($tmpskin);
 }
 
