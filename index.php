@@ -1,18 +1,24 @@
-<?php 
+<?php
 
-require_once("functions.inc.php"); 
+// Include functions
+require_once("functions.inc.php");
 
-$username = $_GET['ign'];
-$clothing = $_GET['clothing'];
-$mode = $_GET['mode'];
+// Check for _GET
+if (isset($_GET['ign'])) {
+  $username = $_GET['ign'];
+}
+if (isset($_GET['clothing'])) {
+  $clothing = $_GET['clothing'];
+}
+if (isset($_GET['mode'])) {
+  $mode = $_GET['mode'];
+}
 
-if ($mode=="download"){
+// Check if "download" mode
+if ($mode && $mode=="download"){
   skin($username, $clothing, true);
   exit;
-} elseif($mode=="skin"){
-  skin($username, $clothing);
-  exit;
-} 
+}
 
 ?>
 
@@ -79,131 +85,130 @@ if ($mode=="download"){
           <p></p>
         </div>
         <div class="span6">
-		    <div class="hero-unit">
-		      <h1>YEAHWHAT?! Skingenerator!</h1>
-		      <p><br/></p>
-		      <p>Want to wear some awesome YEAHWHAT?!-clothes? No problem! Generate your custom skin with unique clothes in YEAHWHAT?!-style</p>
-		    </div>
-		    
-		    <?php
-		      if( !empty($_POST['ign']) && !empty($_POST['clothing']) ) {
-		    ?>
-			
-			<form class="form-horizontal" method="POST" action="">
-				<legend>Preview!</legend>
-				
-  	       		<center>
-  	        		<img src="./preview/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>" />
-  	        		<img src="./preview/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>/back" />
-  	        		
-  	        	</center>
-  	        	<br/><br/>
-				<div class="well" style="max-width: 400px; margin: 0 auto 10px;">
-				<center>	
-			       	<p><a href="http://www.minecraft.net/skin/remote.jsp?url=http://yeahwh.at/download/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a></p>
-				    <p><a href="./download/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Download</a></p>
-			    </center>
-			    </div>
-  	        	<p><a href="/" class="btn btn-mini">Back</a></p>
-  	        	
-		    
-		    <?php
-		    }else{
-		    ?>
+        <div class="hero-unit">
+          <h1>YEAHWHAT?! Skingenerator!</h1>
+          <p><br/></p>
+          <p>Want to wear some awesome YEAHWHAT?!-clothes? No problem! Generate your custom skin with unique clothes in YEAHWHAT?!-style</p>
+        </div>
 
-          	<form class="form-horizontal" method="POST" action="">
-          		<legend>Customize it!</legend>
+        <?php
+          if( !empty($_POST['ign']) && !empty($_POST['clothing']) ) {
+        ?>
+
+      <form class="form-horizontal" method="POST" action="">
+        <legend>Preview!</legend>
+
+              <center>
+                <img src="preview.php?ign=<?php echo $_POST['ign'] ?>&clothing=<?php echo $_POST['clothing'] ?>" />
+                <img src="preview.php?ign=<?php echo $_POST['ign'] ?>&clothing=<?php echo $_POST['clothing'] ?>&back" />
+              </center>
+              <br/><br/>
+        <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
+        <center>
+              <p><a href="http://www.minecraft.net/skin/remote.jsp?url=http://yeahwh.at/download/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a></p>
+            <p><a href="?ign=<?php echo $_POST['ign'] ?>&clothing=<?php echo $_POST['clothing'] ?>&mode=download" class="btn btn-primary">Download</a></p>
+          </center>
+          </div>
+              <p><a href="/" class="btn btn-mini">Back</a></p>
+
+
+        <?php
+        }else{
+        ?>
+
+            <form class="form-horizontal" method="POST" action="">
+              <legend>Customize it!</legend>
               <?php if( isset($_POST['ign']) && empty($_POST['ign']) ) { echo '<p class="text-error">Please insert a IGN.</p>
 '; } ?>
-          		<div class="control-group">
-          			<label class="control-label" for="inputUsername">Username</label>
-          			<div class="controls">
-          				<input type="text" name="ign" id="inputUsername" placeholder="IGN">
-          			</div>
-          		</div>
-          		
-          		<div class="control-group">
-          			<label class="control-label" for="optionsRadios1">Clothing</label>
-          			<div class="controls">
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios1" value="hoodie_white" checked>
-          				  <img width="16px" src="./preview/Herobrine/hoodie_white" />
-          				  Hoodie - White 
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios2" value="hoodie_black">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_black" />
-          				  Hoodie - Black
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios3" value="hoodie_blue">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_blue" />
-          				  Hoodie - Blue
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios4" value="hoodie_green">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_green" />
-          				  Hoodie - Green
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios5" value="hoodie_orange">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_orange" />
-          				  Hoodie - Orange
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios6" value="hoodie_pink">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_pink" />
-          				  Hoodie - Pink
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios7" value="hoodie_purple">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_purple" />
-          				  Hoodie - Purple
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios8" value="hoodie_red">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_red" />
-          				  Hoodie - Red
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios9" value="hoodie_yellow">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_yellow" />
-          				  Hoodie - Yellow
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios10" value="hoodie_light_rainbow">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_light_rainbow" />
-          				  Hoodie - Rainbow light
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios11" value="hoodie_dark_rainbow">
-          				  <img width="16px" src="./preview/Herobrine/hoodie_dark_rainbow" />
-          				  Hoodie - Rainbow dark
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios12" value="suit">
-          				  <img width="16px" src="./preview/Herobrine/suit" />
-          				  Suit
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios13" value="girly_purple">
-          				  <img width="16px" src="./preview/devon_07/girly_purple" />
-          				  Girly - Purple
-          				</label>
-          				<label class="radio">
-          				  <input type="radio" name="clothing" id="optionsRadios14" value="girly_rose">
-          				  <img width="16px" src="./preview/devon_07/girly_rose" />
-          				  Girly - Rosé
-          				</label>
-          				<br/>
-          				<button type="submit" class="btn">Generate & preview</button>
-          			</div>
-          		</div>
-          	</form>
-          	
-          	<?php
-          	}
-          	?>
+              <div class="control-group">
+                <label class="control-label" for="inputUsername">Username</label>
+                <div class="controls">
+                  <input type="text" name="ign" id="inputUsername" placeholder="IGN">
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="optionsRadios1">Clothing</label>
+                <div class="controls">
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios1" value="hoodie_white" checked>
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_white" />
+                    Hoodie - White
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios2" value="hoodie_black">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_black" />
+                    Hoodie - Black
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios3" value="hoodie_blue">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_blue" />
+                    Hoodie - Blue
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios4" value="hoodie_green">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_green" />
+                    Hoodie - Green
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios5" value="hoodie_orange">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_orange" />
+                    Hoodie - Orange
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios6" value="hoodie_pink">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_pink" />
+                    Hoodie - Pink
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios7" value="hoodie_purple">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_purple" />
+                    Hoodie - Purple
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios8" value="hoodie_red">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_red" />
+                    Hoodie - Red
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios9" value="hoodie_yellow">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_yellow" />
+                    Hoodie - Yellow
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios10" value="hoodie_light_rainbow">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_light_rainbow" />
+                    Hoodie - Rainbow light
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios11" value="hoodie_dark_rainbow">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_dark_rainbow" />
+                    Hoodie - Rainbow dark
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios12" value="suit">
+                    <img width="16px" src="preview.php?ign=Herobrine&clothing=suit" />
+                    Suit
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios13" value="girly_purple">
+                    <img width="16px" src="preview.php?ign=Rabias&clothing=girly_purple" />
+                    Girly - Purple
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clothing" id="optionsRadios14" value="girly_rose">
+                    <img width="16px" src="preview.php?ign=Rabias&clothing=girly_rose" />
+                    Girly - Rosé
+                  </label>
+                  <br/>
+                  <button type="submit" class="btn">Generate & preview</button>
+                </div>
+              </div>
+            </form>
+
+            <?php
+            }
+            ?>
        </div>
         <div class="span3">
           <p></p>
