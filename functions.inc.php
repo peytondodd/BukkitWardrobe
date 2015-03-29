@@ -50,7 +50,7 @@ function skin($username, $clothing, $download){
 
 	header('Content-Type: image/png');
 	if($download){
-    	header('Content-Disposition: attachment; filename="'.$username.'"');
+			header('Content-Disposition: attachment; filename="'.$username.'.png"');
 	}
 
 	imagepng($tmpskin);
