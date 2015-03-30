@@ -17,7 +17,8 @@
     }
     ,{
       "name": "hoodie_green",
-      "description": "Hoodie - Green"
+      "description": "Hoodie - Green",
+      "playermodel": "Herobrine"
     },
     {
       "name": "hoodie_orange",
@@ -36,7 +37,8 @@
     }
     ,{
       "name": "hoodie_red",
-      "description": "Hoodie - Red"
+      "description": "Hoodie - Red",
+      "playermodel": "Herobrine"
     },
     {
       "name": "hoodie_yellow",
