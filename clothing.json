@@ -1,0 +1,72 @@
+{
+  "clothing":[
+    {
+      "name": "hoodie_white",
+      "description": "Hoodie - White",
+      "playermodel": "Herobrine",
+      "active":"true"
+    }
+    ,{
+      "name": "hoodie_black",
+      "description": "Hoodie - Black",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "hoodie_blue",
+      "description": "Hoodie - Blue",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "hoodie_green",
+      "description": "Hoodie - Green"
+    },
+    {
+      "name": "hoodie_orange",
+      "description": "Hoodie - Orange",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "hoodie_pink",
+      "description": "Hoodie - Pink",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "hoodie_purple",
+      "description": "Hoodie - Purple",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "hoodie_red",
+      "description": "Hoodie - Red"
+    },
+    {
+      "name": "hoodie_yellow",
+      "description": "Hoodie - Yellow",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "hoodie_light_rainbow",
+      "description": "Hoodie - Light Rainbow",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "hoodie_dark_rainbow",
+      "description": "Hoodie - Dark Rainbow",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "suit",
+      "description": "Suit",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "girly_purple",
+      "description": "Girly - Purple",
+      "playermodel": "Herobrine"
+    }
+    ,{
+      "name": "girly_rose",
+      "description": "Girly - Rose"
+    }
+  ]
+}
