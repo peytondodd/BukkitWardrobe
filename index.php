@@ -3,8 +3,8 @@
   require_once("functions.inc.php");
 
   // Check for _GET
-  if (isset($_GET['ign'])) {
-    $username = $_GET['ign'];
+  if (isset($_GET['username'])) {
+    $username = $_GET['username'];
   }
   if (isset($_GET['clothing'])) {
     $clothing = $_GET['clothing'];
@@ -64,22 +64,22 @@
       </div><!--/.jumbotron -->
 
       <?php
-        if( !empty($_POST['ign']) && !empty($_POST['clothing']) ) {
+        if( !empty($_POST['username']) && !empty($_POST['clothing']) ) {
       ?>
         <form method="POST" action="">
           <legend>Preview!</legend>
             <center>
-              <img src="preview.php?ign=<?php echo $_POST['ign'] ?>&clothing=<?php echo $_POST['clothing'] ?>" />
-              <img src="preview.php?ign=<?php echo $_POST['ign'] ?>&clothing=<?php echo $_POST['clothing'] ?>&back" />
+              <img src="preview.php?username=<?php echo $_POST['username'] ?>&clothing=<?php echo $_POST['clothing'] ?>" />
+              <img src="preview.php?username=<?php echo $_POST['username'] ?>&clothing=<?php echo $_POST['clothing'] ?>&back" />
             </center>
             <br/><br/>
             <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
               <center>
                 <p>
-                  <a href="http://www.minecraft.net/skin/remote.jsp?url=http://yeahwh.at/download/<?php echo $_POST['ign'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a>
+                  <a href="http://www.minecraft.net/skin/remote.jsp?url=http://yeahwh.at/download/<?php echo $_POST['username'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a>
                 </p>
                 <p>
-                  <a href="?ign=<?php echo $_POST['ign'] ?>&clothing=<?php echo $_POST['clothing'] ?>&mode=download" class="btn btn-primary">Download</a>
+                  <a href="?username=<?php echo $_POST['username'] ?>&clothing=<?php echo $_POST['clothing'] ?>&mode=download" class="btn btn-primary">Download</a>
                 </p>
               </center>
             </div><!--/.well -->
@@ -91,25 +91,35 @@
       ?>
         <form method="POST" action="">
           <legend>Customize it!</legend>
-            <?php if( isset($_POST['ign']) && empty($_POST['ign']) ) {
-              echo '<p class="text-error">Please insert a IGN.</p>';
+            <?php if( isset($_POST['username']) && empty($_POST['username']) ) {
+              echo '<div class="alert alert-danger" role="alert">
+                      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                      <span class="sr-only">Error:</span>
+                      Pleas enter an "Username".
+                    </div>';
             } ?>
             <div class="form-group">
               <label class="control-label" for="inputUsername">Username</label>
-              <input type="text" class="form-control" name="ign" id="inputUsername" placeholder="IGN">
+              <input type="text" class="form-control" name="username" id="inputUsername" placeholder="Username">
             </div><!--/.form-group -->
 
             <div class="form-group">
               <div class="clothes-wrapper">
                 <h5>Clothing</h5>
                 <div class="row form-group clothes-chooser">
-                  <noscript><div class="col-lg-12"><p><strong>Error:</strong> JavaScript is disabled. Enable it and reload this page.</p></div></noscript>
+                  <noscript>
+                    <div class="alert alert-warning" role="alert">
+                      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                      <span class="sr-only">Error:</span>
+                      JavaScript is disabled. Enable it and reload this page.
+                    </div>
+                  </noscript>
                 </div><!--/.clothes-chooser -->
                 <script class="clothes-chooser-template" type="text/x-handlebars-template">
                   {{#clothing}}
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                       <div class="clothes-chooser-item {{#if @first}}selected{{/if}}">
-                        <img src="preview.php?ign={{playermodel}}&clothing={{name}}" class="img-rounded img-clothing" alt="{{description}}"/>
+                        <img src="preview.php?username={{playermodel}}&clothing={{name}}" class="img-rounded img-clothing" alt="{{description}}"/>
                         <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
                           <span class="title">{{description}}</span>
                           <input type="radio" name="clothing" value="{{name}}" {{#if @first}}checked="checked"{{/if}}>

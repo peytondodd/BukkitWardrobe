@@ -9,7 +9,7 @@ function flip(&$img)
 }
 
 // File and new size
-$filename = 'http://skin.yeahwh.at/skin/' . $_GET['ign'] . '/'. $_GET['clothing'];
+$filename = 'http://skin.yeahwh.at/skin/' . $_GET['username'] . '/'. $_GET['clothing'];
 
 // Content type
 header('Content-Type: image/png');
