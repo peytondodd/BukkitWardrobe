@@ -120,10 +120,10 @@
                 </div><!--/.clothes-chooser -->
                 <script class="clothes-chooser-template" type="text/x-handlebars-template">
                   {{#clothing}}
-                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                       <div class="clothes-chooser-item {{#if @first}}selected{{/if}}">
                         <img src="preview.php?username={{playermodel}}&clothing={{name}}" class="img-rounded img-clothing" alt="{{description}}"/>
-                        <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <div>
                           <span class="title">{{description}}</span>
                           <input type="radio" name="clothing" value="{{name}}" {{#if @first}}checked="checked"{{/if}}>
                         </div><!--/.col-xs-8 -->
