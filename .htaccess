@@ -1,8 +1,0 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^download/([a-zA-Z0-9_-]+)$ index.php?ign=$1&mode=download
-RewriteRule ^download/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?ign=$1&clothing=$2&mode=download [L]
-RewriteRule ^skin/([a-zA-Z0-9_-]+)$ index.php?ign=$1&mode=skin
-RewriteRule ^skin/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?ign=$1&clothing=$2&mode=skin [L]
-RewriteRule ^preview/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ preview.php?ign=$1&clothing=$2
-RewriteRule ^preview/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/back$ preview.php?ign=$1&clothing=$2&back [L]
