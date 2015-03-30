@@ -2,6 +2,9 @@
   // Include functions
   require_once("functions.inc.php");
 
+  // Include configuration file
+  require_once("config.php");
+
   // Check for _GET
   if (isset($_GET['username'])) {
     $username = $_GET['username'];
@@ -28,7 +31,7 @@
     <meta name="author" content="">
     <link rel="icon" href="assets/img/favicon.ico">
 
-    <title>YEAHWHAT?! Skingenerator</title>
+    <title><?php echo $settings['servername'] ?> - <?php echo $settings['title'] ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -36,7 +39,7 @@
 
   <body role="document">
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar <?php if(isset($theme['navbar-dark']) && $theme['navbar-dark']){echo "navbar-inverse";} else {echo "navbar-default";} ?> navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -45,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://yeahwh.at">YEAHWHAT?!</a>
+          <a class="navbar-brand" href="<?php echo $settings['website'] ?>">YEAHWHAT?!</a>
         </div><!--/.navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -76,7 +79,7 @@
             <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
               <center>
                 <p>
-                  <a href="http://www.minecraft.net/skin/remote.jsp?url=http://yeahwh.at/download/<?php echo $_POST['username'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a>
+                  <a href="http://www.minecraft.net/skin/remote.jsp?url=http://<?php echo $full_url ?>download/<?php echo $_POST['username'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a>
                 </p>
                 <p>
                   <a href="?username=<?php echo $_POST['username'] ?>&clothing=<?php echo $_POST['clothing'] ?>&mode=download" class="btn btn-primary">Download</a>

@@ -1,5 +1,8 @@
 <?php
 
+$full_url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$parse_url = parse_url($full_url);
+
 function safeQ($worse) {
 	// Stripslashes
 	$okay = htmlspecialchars(stripslashes($worse));

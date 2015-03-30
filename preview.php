@@ -1,4 +1,10 @@
 <?php
+// Include functions
+require_once("functions.inc.php");
+
+// Include configuration file
+require_once("config.php");
+
 function flip(&$img)
 {
 	$size_x = imagesx($img);
