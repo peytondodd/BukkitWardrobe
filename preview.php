@@ -15,7 +15,7 @@ function flip(&$img)
 }
 
 // File and new size
-$filename = 'http://skin.yeahwh.at/skin/' . $_GET['username'] . '/'. $_GET['clothing'];
+$filename = "http://" . $_SERVER['HTTP_HOST'] . "/". $settings['subfolder'] . "/?username=" . $_GET['username'] . '&clothing='. $_GET['clothing'] . '&mode=download';
 
 // Content type
 header('Content-Type: image/png');
