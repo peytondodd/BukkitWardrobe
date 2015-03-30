@@ -102,7 +102,9 @@
             <div class="form-group">
               <div class="clothes-wrapper">
                 <h5>Clothing</h5>
-                <div class="row form-group clothes-chooser"></div><!--/.clothes-chooser -->
+                <div class="row form-group clothes-chooser">
+                  <noscript><div class="col-lg-12"><p><strong>Error:</strong> JavaScript is disabled. Enable it and reload this page.</p></div></noscript>
+                </div><!--/.clothes-chooser -->
                 <script class="clothes-chooser-template" type="text/x-handlebars-template">
                   {{#clothing}}
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
