@@ -62,11 +62,12 @@
     ,{
       "name": "girly_purple",
       "description": "Girly - Purple",
-      "playermodel": "Herobrine"
+      "playermodel": "Rabias"
     }
     ,{
       "name": "girly_rose",
-      "description": "Girly - Rose"
+      "description": "Girly - Rose",
+      "playermodel": "Rabias"
     }
   ]
 }
