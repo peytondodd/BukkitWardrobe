@@ -46,13 +46,13 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="http://yeahwh.at">YEAHWHAT?!</a>
-        </div>
+        </div><!--/.navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Skingenerator</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
+      </div><!--/.container -->
     </nav>
 
     <div class="container theme-showcase" role="main">
@@ -84,7 +84,7 @@
               </center>
             </div><!--/.well -->
             <p>
-              <a href="/" class="btn btn-mini">Back</a>
+              <a href="javascript:window.history.back();" class="btn btn-mini">Back</a>
             </p>
       <?php
         }else{
@@ -97,80 +97,157 @@
             <div class="form-group">
               <label class="control-label" for="inputUsername">Username</label>
               <input type="text" class="form-control" name="ign" id="inputUsername" placeholder="IGN">
-            </div>
+            </div><!--/.form-group -->
 
             <div class="form-group">
-              <label class="control-label" for="optionsRadios1">Clothing</label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios1" value="hoodie_white" checked>
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_white" />
-                Hoodie - White
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios2" value="hoodie_black">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_black" />
-                Hoodie - Black
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios3" value="hoodie_blue">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_blue" />
-                Hoodie - Blue
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios4" value="hoodie_green">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_green" />
-                Hoodie - Green
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios5" value="hoodie_orange">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_orange" />
-                Hoodie - Orange
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios6" value="hoodie_pink">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_pink" />
-                Hoodie - Pink
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios7" value="hoodie_purple">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_purple" />
-                Hoodie - Purple
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios8" value="hoodie_red">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_red" />
-                Hoodie - Red
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios9" value="hoodie_yellow">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_yellow" />
-                Hoodie - Yellow
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios10" value="hoodie_light_rainbow">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_light_rainbow" />
-                Hoodie - Rainbow light
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios11" value="hoodie_dark_rainbow">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=hoodie_dark_rainbow" />
-                Hoodie - Rainbow dark
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios12" value="suit">
-                <img width="16px" src="preview.php?ign=Herobrine&clothing=suit" />
-                Suit
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios13" value="girly_purple">
-                <img width="16px" src="preview.php?ign=Rabias&clothing=girly_purple" />
-                Girly - Purple
-              </label>
-              <label class="radio">
-                <input type="radio" name="clothing" id="optionsRadios14" value="girly_rose">
-                <img width="16px" src="preview.php?ign=Rabias&clothing=girly_rose" />
-                Girly - Rosé
-              </label>
+              <div class="clothes-wrapper">
+                <h5>Clothing</h5>
+                <div class="row form-group clothes-chooser">
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item selected">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_white" class="img-rounded img-clothing" alt="Hoodie - White"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - White</span>
+                        <input type="radio" name="clothing" value="hoodie_white" checked="checked">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_black" class="img-rounded img-clothing" alt="Hoodie - Black"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Black</span>
+                        <input type="radio" name="clothing" value="hoodie_black">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_blue" class="img-rounded img-clothing" alt="Hoodie - Black"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Blue</span>
+                        <input type="radio" name="clothing" value="hoodie_blue">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_green" class="img-rounded img-clothing" alt="Hoodie - Green"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Green</span>
+                        <input type="radio" name="clothing" value="hoodie_green">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_orange" class="img-rounded img-clothing" alt="Hoodie - Orange"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Orange</span>
+                        <input type="radio" name="clothing" value="hoodie_orange">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_pink" class="img-rounded img-clothing" alt="Hoodie - Pink"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Pink</span>
+                        <input type="radio" name="clothing" value="hoodie_pink">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_purple" class="img-rounded img-clothing" alt="Hoodie - Purple"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Purple</span>
+                        <input type="radio" name="clothing" value="hoodie_purple">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_red" class="img-rounded img-clothing" alt="Hoodie - Red"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Red</span>
+                        <input type="radio" name="clothing" value="hoodie_red">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_yellow" class="img-rounded img-clothing" alt="Hoodie - Yellow"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Yellow</span>
+                        <input type="radio" name="clothing" value="hoodie_yellow">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_light_rainbow" class="img-rounded img-clothing" alt="Hoodie - Light Rainbow"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Light Rainbow</span>
+                        <input type="radio" name="clothing" value="hoodie_light_rainbow">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=hoodie_dark_rainbow" class="img-rounded img-clothing" alt="Hoodie - Dark Rainbow"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Hoodie - Dark Rainbow</span>
+                        <input type="radio" name="clothing" value="hoodie_dark_rainbow">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Herobrine&clothing=suit" class="img-rounded img-clothing" alt="Suit"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Suit</span>
+                        <input type="radio" name="clothing" value="suit">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Rabias&clothing=girly_purple" class="img-rounded img-clothing" alt="Girly - Purple"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Girly - Purple</span>
+                        <input type="radio" name="clothing" value="girly_purple">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="clothes-chooser-item">
+                      <img src="preview.php?ign=Rabias&clothing=girly_rose" class="img-rounded img-clothing" alt="Girly - Rose"/>
+                      <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                        <span class="title">Girly - Rose</span>
+                        <input type="radio" name="clothing" value="girly_rose">
+                      </div><!--/.col-xs-8 -->
+                      <div class="clear"></div>
+                    </div><!--/.clothes-chooser-item -->
+                  </div><!--/.col-xs-12 -->
+                </div><!--/.clothes-chooser -->
+              </div><!--/.clothes-wrapper -->
               <br/>
               <button type="submit" class="btn">Generate & preview</button>
             </div><!--/.form-group -->
@@ -182,7 +259,6 @@
         <hr>
         <p>&copy; frdmn 2015 - <a href="https://github.com/yeahwhat-mc/BukkitWardrobe" target="_blank">BukkitWardrobe</a></p>
       </footer>
-
     </div> <!-- /container -->
 
 
