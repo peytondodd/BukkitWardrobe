@@ -134,7 +134,9 @@
                 </script><!--/.clothes-chooser-template -->
               </div><!--/.clothes-wrapper -->
               <br/>
-              <button type="submit" class="btn">Generate & preview</button>
+              <div class="clearfix">
+                <button type="submit" class="btn btn-lg btn-primary pull-right">Generate & preview</button>
+              </div>
             </div><!--/.form-group -->
           </form><!--/.form-horizontal -->
       <?php
