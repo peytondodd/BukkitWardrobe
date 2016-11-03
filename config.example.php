@@ -11,7 +11,7 @@ date_default_timezone_set("Europe/Berlin"); // Set default timezone for date()
 $settings['servername'] = "YEAHWHAT?!";
 $settings['website'] = "http://yeahwh.at";
 $settings['title'] = "Skingenerator";
-$settings['subfolder'] = "wardrobe";
+$settings['subfolder'] = "subfolder/"; # make sure to add a trailing slash
 
 // Design
 
