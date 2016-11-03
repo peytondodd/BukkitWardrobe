@@ -79,9 +79,6 @@
             <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
               <center>
                 <p>
-                  <a href="http://www.minecraft.net/skin/remote.jsp?url=http://<?php echo $full_url ?>download/<?php echo $_POST['username'] ?>/<?php echo $_POST['clothing'] ?>" class="btn btn-primary">Apply on minecraft.net</a>
-                </p>
-                <p>
                   <a href="?username=<?php echo $_POST['username'] ?>&clothing=<?php echo $_POST['clothing'] ?>&mode=download" class="btn btn-primary">Download</a>
                 </p>
               </center>
