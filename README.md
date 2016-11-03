@@ -37,4 +37,4 @@ Caution: When using the `dev` argument, Grunt won't minify your JS or CSS, so it
 
 ## Version
 
-1.2.0
+1.2.1
