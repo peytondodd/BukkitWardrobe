@@ -38,7 +38,7 @@ function skin($username, $clothing, $download){
 		exit;
 	}
 
-	cache_skin('http://skins.minecraft.net/MinecraftSkins/'.$username.'.png');
+	cache_skin('http://s3.amazonaws.com/MinecraftSkins/'.$username.'.png');
 
 	$tmpskin = imagecreatefrompng('tmp.png');
 	$clothing = imagecreatefrompng("clothes/".$clothing.".png");
