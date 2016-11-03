@@ -144,7 +144,7 @@
       ?>
       <footer>
         <hr>
-        <p>&copy; frdmn 2015 - <a href="https://github.com/yeahwhat-mc/BukkitWardrobe" target="_blank">BukkitWardrobe</a></p>
+        <p>&copy; <a href="https://frd.mn">frdmn</a> <?php echo date("Y"); ?> - <a href="https://github.com/yeahwhat-mc/BukkitWardrobe" target="_blank">BukkitWardrobe</a></p>
       </footer>
     </div> <!-- /container -->
 
