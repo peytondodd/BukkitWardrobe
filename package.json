@@ -1,6 +1,6 @@
 {
   "name": "BukkitWardrobe",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "PHP script to provide your Minecraft players a web based wardrobe / clothes generator",
   "repository": {
     "type": "git",
